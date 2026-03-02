@@ -16,4 +16,7 @@ servirCafe (c, state) = (c, state)
 
 
 executerActions :: InfoMachine -> [Char] -> InfoMachine
-executerActions info chaine = 
+executerActions info (x:xs) | x == 'A' = executerActions (attendre info) xs
+                            | x == 'L' = executerActions (lancerMachine info) xs
+                            | x == 'S' = executerActions (servirCafe info) xs
+                            | otherwise = info
