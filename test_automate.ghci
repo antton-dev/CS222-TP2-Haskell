@@ -1,0 +1,22 @@
+:t lancerMachine
+lancerMachine (0, CafePret 1)
+-- (0, CafePret 1)
+lancerMachine (0, Vide)
+
+:t attendre
+attendre (0, Percolation)
+--(0,CafePret 4)
+attendre (0, Vide)
+--(0,Vide)
+
+:t servirCafe
+servirCafe (0, CafePret 4)
+-- (1,CafePret 3)
+servirCafe (3, CafePret 1)
+-- (4,CafePret 0)
+servirCafe (4, CafePret 0)
+-- (4,Vide)
+servirCafe (0, Percolation)
+-- (0,Percolation)
+servirCafe (0, Vide)
+-- (0,Vide)

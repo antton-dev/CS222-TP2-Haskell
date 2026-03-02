@@ -1,0 +1,80 @@
+:t comparer
+comparer (Standard 1 Piques) (Atout 19)
+-- False
+
+comparer (Atout 19) (Standard 1 Piques) 
+-- True
+
+comparer (Atout 19) Excuse
+-- True
+
+comparer Excuse (Atout 10)
+-- False
+
+comparer Excuse (Standard 1 Piques)
+-- False
+
+
+comparer (Standard 2 Piques) (Standard 1 Coeur)
+-- False
+
+comparer (Standard 1 Piques) (Standard 6 Piques)
+-- False
+
+comparer (Standard 5 Piques) (Standard 1 Piques)
+-- True
+
+comparer (Standard 14 Carreau) (Standard 14 Carreau)
+-- False
+
+comparer (Atout 1) (Atout 15)
+-- False
+
+comparer (Atout 15) (Atout 1)
+-- True
+
+comparer (Atout 15) (Atout 15)
+-- False
+
+
+
+:t meme_couleur
+meme_couleur Piques (Standard 1 Piques) 
+-- True
+meme_couleur Piques (Standard 1 Carreau)
+-- False
+
+:t atout_plus_grand 
+atout_plus_grand 5 (Atout 15)
+-- True
+
+atout_plus_grand 5 (Atout 2)
+-- False
+
+atout_plus_grand 5 (Atout 5)
+-- False
+
+
+:t atout 
+atout (Standard 1 Carreau) 
+-- False
+
+atout (Atout 1)
+-- True
+
+atout (Excuse) 
+-- False
+
+:t (|||)
+
+(|||) [] [1,2]
+-- [1,2]
+
+(|||) [1,2] []
+-- [1, 2]
+
+(|||) [3,4] [1,2]
+-- [3,4]
+
+(|||) [] []
+-- []
