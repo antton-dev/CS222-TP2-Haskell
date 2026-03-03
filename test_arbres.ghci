@@ -1,0 +1,35 @@
+-- Les test d'assertions ci-dessous doivent retourner True
+
+:t nombre_feuilles
+nombre_feuilles arbre_example == 5
+nombre_feuilles (Leaf 1) == 1
+
+:t hauteur
+hauteur arbre_example == 4
+hauteur (Leaf 1) == 1
+
+:t rechercher_abr
+rechercher_abr abr_example 4
+-- True
+rechercher_abr abr_example (-5)
+-- True
+rechercher_abr abr_example (-8)
+-- True
+rechercher_abr abr_example 0
+-- True
+rechercher_abr abr_example 18
+-- True
+rechercher_abr abr_example 13
+-- True
+rechercher_abr abr_example 42
+-- True
+rechercher_abr abr_example 28
+-- True
+rechercher_abr abr_example 73
+-- True
+rechercher_abr abr_example 21
+-- False
+
+:t rechercher_abr 
+aplatir_abr abr_example == [-8,-5,0,4,13,18,28,42,73]
+aplatir_abr (Leaf 1) == [1]
