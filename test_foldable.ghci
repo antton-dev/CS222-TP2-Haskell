@@ -1,0 +1,19 @@
+-- Sauf mention contraire, les tests suivants doivent retourner True
+
+:t parcours_infixe
+parcours_infixe abr_example == [-8,-5,0,4,13,18,28,42,73]
+parcours_infixe (Leaf 1) == [1]
+
+
+:t foldr_arbre
+foldr_arbre (:) [] abr_example == [-8,-5,0,4,13,18,28,42,73]
+foldr (:) [] (parcours_infixe abr_example) == [-8,-5,0,4,13,18,28,42,73]
+foldr_arbre (:) [] abr_example == foldr (:) [] (parcours_infixe abr_example)
+
+
+:t foldr
+-- foldr :: Foldable t => (a -> b -> b) -> b -> t a -> b
+-- t peux être : []  ou   Bintree   (liste ou arbre binaire)
+
+
+sum abr_example == 165
