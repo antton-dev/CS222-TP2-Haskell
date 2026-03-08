@@ -78,3 +78,25 @@ atout (Excuse)
 
 (|||) [] []
 -- []
+
+
+
+:t cartes_possibles_hors_excuse
+cartes_possibles_hors_excuse (Standard 10 Coeur) [Standard 11 Coeur, Standard 8 Piques, Atout 15]
+-- [Standard 11 Coeur]
+
+cartes_possibles_hors_excuse (Standard 5 Carreau)  [Standard 10 Coeur, Standard 8 Piques, Atout 15]
+-- [Atout 15]
+
+cartes_possibles_hors_excuse (Standard 5 Carreau)  [Standard 10 Coeur, Standard 8 Piques ]
+-- [Standard 10 Coeur, Standard 8 Piques]
+
+
+
+
+:t cartes_possibles
+cartes_possibles (Standard 14 Coeur) [Standard 10 Coeur, Atout 15, Excuse]
+-- [Standard 10 Coeur, Excuse]
+
+cartes_possibles (Standard 5 Carreau) [Standard 10 Coeur, Atout 15, Excuse]
+-- [Atout 15, Excuse]
