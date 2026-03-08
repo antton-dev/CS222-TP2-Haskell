@@ -20,3 +20,12 @@ servirCafe (0, Percolation)
 -- (0,Percolation)
 servirCafe (0, Vide)
 -- (0,Vide)
+
+
+
+:t executerActions
+executerActions (0, Vide) "LASSASSLSSASSSLSASSAASSLSAS"
+-- (9, CafePret 3)
+
+executerActions (0, Vide) ""
+-- (0, Vide)

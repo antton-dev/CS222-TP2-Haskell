@@ -10,13 +10,16 @@ attendre (c, Percolation) = (c, CafePret 4)
 attendre (c, state) = (c, state)
 
 servirCafe :: InfoMachine -> InfoMachine
-servirCafe (c, CafePret n) | n>0  = (c+1, CafePret (n-1)) 
-                           | otherwise = (c, Vide)
-servirCafe (c, state) = (c, state)
+servirCafe (c, CafePret 1) = (c + 1, Vide)
+servirCafe (c, CafePret n) | n > 1 = (c + 1, CafePret (n - 1))
+servirCafe info = info
 
 
 executerActions :: InfoMachine -> [Char] -> InfoMachine
-executerActions info (x:xs) | x == 'A' = executerActions (attendre info) xs
-                            | x == 'L' = executerActions (lancerMachine info) xs
-                            | x == 'S' = executerActions (servirCafe info) xs
-                            | otherwise = info
+executerActions info [] = info
+executerActions info ('A':xs) = executerActions (attendre info) xs
+executerActions info ('L':xs) = executerActions (lancerMachine info) xs
+executerActions info ('S':xs) = executerActions (servirCafe info) xs
+executerActions info (_:xs)   = executerActions info xs 
+
+-- En executant la séquence, on a servi 9 cafés et il reste 3 tasses pretes.
